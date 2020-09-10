@@ -8,7 +8,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <script src="jquery.simplecolorpicker.js"></script>
   <link rel="stylesheet" href="jquery.simplecolorpicker.css">
-  
+
   <script src='spectrum.js'></script>
   <link rel='stylesheet' href='spectrum.css' />
 
@@ -68,7 +68,7 @@
 
   <div>
     <% if @error then %>
-      <div class="alert alert-error"><%= @error %></div>
+      <div class="alert alert-danger"><%= @error %></div>
     <% end %>
     <%= yield %>
   </div>

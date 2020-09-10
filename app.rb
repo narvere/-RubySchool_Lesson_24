@@ -29,14 +29,19 @@ get '/login/form' do
 end
 
 get '/about' do
+
+  erb "hi"
+  @error = 'Something in wrong!!!'
   erb :about
 end
 
 get '/visit' do
+  #@error = 'xxx'
   erb :visit
 end
 
 get '/contacts' do
+  @error = 'Something in wrong!!!'
   erb :contacts
 end
 
@@ -56,16 +61,22 @@ get '/secure/place' do
 end
 
 post('/visit') do
- @name = params[:name]
- @phone = params[:phone]
- @date = params[:date]
- @parik = params[:parik]
- @color = params[:color]
+  @name = params[:name]
+  @phone = params[:phone]
+  @date = params[:date]
+  @parik = params[:parik]
+  @color = params[:color]
 
- f = File.open './public/users.txt', 'a'
- f.write "User: #{@name} will call #{@phone} at #{@date} by #{@parik} in #{@color}.\n"
- f.close
- erb :visit
+  if @name == ''
+    @error = 'Вы не ввели имя'
+  end
+  return erb :visit
+end
+
+f = File.open './public/users.txt', 'a'
+f.write "User: #{@name} will call #{@phone} at #{@date} by #{@parik} in #{@color}.\n"
+f.close
+erb :visit
 end
 
 post('/contacts') do
