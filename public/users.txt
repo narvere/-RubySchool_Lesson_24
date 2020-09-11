@@ -50,3 +50,5 @@ User: sdg will call  at  by Вася Пупкин in #00a6ff.
 User:  will call  at  by Вася Пупкин in #00a6ff.
 User:  will call gerger at  by Вася Пупкин in #00a6ff.
 User:  will call  at 2020-09-01 by Вася Пупкин in #00a6ff.
+User: sd will call djtyj at 2020-08-31 by Вася Пупкин in #00a6ff.
+User: xxxxxxxxxxxxxx will call xxxxxxxxxxxxxxx at 2020-09-10 by Сергей Жуков in #f44336.

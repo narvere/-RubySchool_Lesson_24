@@ -2,6 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
 
+
 configure do
   enable :sessions
 end
@@ -36,7 +37,6 @@ get '/about' do
 end
 
 get '/visit' do
-  #@error = 'xxx'
   erb :visit
 end
 
@@ -72,25 +72,39 @@ post('/visit') do
       :phone => 'Введите телефон',
       :date => 'Введите дату',
       :parik => 'Выберите парикмахера',
-      :@color => 'Выберите цвет',      
+      :@color => 'Выберите цвет'
   }
-  hh.each do |key, value|
-    if params[key] == ''
-      @error = hh[key]
-      return erb :visit
-    end
+
+  @error = hh.select { |key, _| params[key] == "" }.values.join(", ")
+  if @error != ''
+    return erb :visit
+    #hh.each do |key, value|
+    # if params[key] == ''
+    #   @error = hh[key]
+    #   return erb :visit
+    # end
   end
 
 
-f = File.open './public/users.txt', 'a'
-f.write "User: #{@name} will call #{@phone} at #{@date} by #{@parik} in #{@color}.\n"
-f.close
-erb :visit
+  f = File.open './public/users.txt', 'a'
+  f.write "User: #{@name} will call #{@phone} at #{@date} by #{@parik} in #{@color}.\n"
+  f.close
+  erb :visit
 end
 
 post('/contacts') do
   @email = params[:email]
   @text = params[:text]
+
+  hh = {
+      :email => 'Введите email',
+      :text => 'Введите текст письма'
+  }
+
+  @error = hh.select { |key, _| params[key] == "" }.values.join(", ")
+  if @error != ''
+    return erb :contacts
+  end
 
   f = File.open './public/contacts.txt', 'a'
   f.write "email: #{@email} Message: #{@text}.\n"
