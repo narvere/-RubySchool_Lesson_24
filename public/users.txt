@@ -40,3 +40,13 @@ User: agg will call 43534 at  by Владимир Путин in #dc2127.
 User:  will call  at  by Вася Пупкин in green.
 User: sdf will call sdf at 2020-09-17 by Сергей Жуков in green.
 User: sdf will call sdf at 2020-09-17 by Сергей Жуков in green.
+User: erger will call 5345345534534534534534534 at 2020-09-08 by Владимир Путин in #00a6ff.
+User: xxx will call xxx at 2020-09-16 by Владимир Путин in #00a6ff.
+User: zxzxzx will call zx at 2020-09-10 by Вася Пупкин in #8fce00.
+User:  will call sc at  by Вася Пупкин in #00a6ff.
+User:  will call  at  by Вася Пупкин in #00a6ff.
+User:  will call  at  by Вася Пупкин in #00a6ff.
+User: sdg will call  at  by Вася Пупкин in #00a6ff.
+User:  will call  at  by Вася Пупкин in #00a6ff.
+User:  will call gerger at  by Вася Пупкин in #00a6ff.
+User:  will call  at 2020-09-01 by Вася Пупкин in #00a6ff.

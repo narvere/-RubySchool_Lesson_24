@@ -31,7 +31,7 @@ end
 get '/about' do
 
   erb "hi"
-  @error = 'Something in wrong!!!'
+  # @error = 'Something in wrong!!!'
   erb :about
 end
 
@@ -41,7 +41,7 @@ get '/visit' do
 end
 
 get '/contacts' do
-  @error = 'Something in wrong!!!'
+  #  @error = 'Something in wrong!!!'
   erb :contacts
 end
 
@@ -67,11 +67,20 @@ post('/visit') do
   @parik = params[:parik]
   @color = params[:color]
 
-  if @name == ''
-    @error = 'Вы не ввели имя'
+  hh = {
+      :name => 'Введите имя',
+      :phone => 'Введите телефон',
+      :date => 'Введите дату',
+      :parik => 'Выберите парикмахера',
+      :@color => 'Выберите цвет',      
+  }
+  hh.each do |key, value|
+    if params[key] == ''
+      @error = hh[key]
+      return erb :visit
+    end
   end
-  return erb :visit
-end
+
 
 f = File.open './public/users.txt', 'a'
 f.write "User: #{@name} will call #{@phone} at #{@date} by #{@parik} in #{@color}.\n"
